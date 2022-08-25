@@ -2,8 +2,8 @@ import http, { request } from "http";
 import PostService from "../services/postService";
 import sendJson from "../utils/sendJson";
 const postService = new PostService();
-// @desc    Gets All Products
-// @route   GET /api/products
+// @desc    Gets All Posts
+// @route   GET /api/posts
 exports.getAll = async (
   req: http.IncomingMessage,
   res: http.ServerResponse
@@ -23,7 +23,8 @@ exports.getAll = async (
     sendJson(500, data, res);
   }
 };
-
+// @desc    Get a Post
+// @route   GET /api/post/:id
 exports.getOne = async (
   req: http.IncomingMessage,
   res: http.ServerResponse,
@@ -44,7 +45,8 @@ exports.getOne = async (
     sendJson(500, data, res);
   }
 };
-
+// @desc    Create a Post
+// @route   POST /api/posts
 exports.create = async (
   req: http.IncomingMessage,
   res: http.ServerResponse
@@ -64,7 +66,8 @@ exports.create = async (
     sendJson(500, data, res);
   }
 };
-
+// @desc    Update a Post
+// @route   PUT /api/posts/:id
 exports.update = async (
   req: http.IncomingMessage,
   res: http.ServerResponse,
@@ -85,7 +88,8 @@ exports.update = async (
     sendJson(500, data, res);
   }
 };
-
+// @desc    Delete a Post
+// @route   DELETE /api/posts/:id
 exports.delete = async (
   req: http.IncomingMessage,
   res: http.ServerResponse,
